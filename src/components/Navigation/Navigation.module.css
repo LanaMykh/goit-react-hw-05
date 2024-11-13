@@ -1,0 +1,35 @@
+header {
+    display: flex;
+    gap: 20px;
+
+    position: relative;
+    /* Для позиціонування псевдоелемента */
+    background-color: #fff;
+    /* Основний колір фону хедера */
+    z-index: 1;
+    /* Щоб тінь була нижче інших елементів */
+    padding: 10px 20px;
+    /* padding-left: 20px; */
+
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    /* Тягнеться на всю ширину вікна */
+    height: 2px;
+    /* Товщина лінії */
+    background-color: transparent;
+    /* Прозорий фон */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    /* Тінь для імітації кордону */
+    transform: translateX(-50vw + 50%);
+    /* Центрування лінії */
+}
+
+.active {
+    color: red;
+}
