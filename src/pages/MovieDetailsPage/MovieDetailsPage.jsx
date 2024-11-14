@@ -49,7 +49,7 @@ const MovieDetailsPage = () => {
         ) : (
           <span className={styles.noFoto}>X</span>
         )}
-        <div>
+        <div className={styles.movieDescr}>
           <h1>
             {movieById.title}{' '}
             {movieById.release_date

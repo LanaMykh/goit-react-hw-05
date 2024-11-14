@@ -13,6 +13,12 @@
     padding-bottom: 10px;
 }
 
+.movieDescr {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .addInfo {
     position: relative;
     z-index: 1;
