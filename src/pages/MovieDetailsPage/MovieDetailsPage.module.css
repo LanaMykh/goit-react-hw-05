@@ -1,0 +1,55 @@
+.movieBox {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.movieDetails {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 10px;
+}
+
+.addInfo {
+    position: relative;
+    z-index: 1;
+    padding: 10px 10px;
+
+}
+
+.moreInfo {
+
+    list-style-type: disc;
+    margin-left: 30px;
+}
+
+.moreInfo::after,
+.movieDetails::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 2px;
+    background-color: transparent;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    transform: translateX(-50vw + 50%);
+}
+
+.listMoreInfo {
+    /* display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    z-index: 1; */
+    /* padding-left: 20px; */
+}
+
+.listMoreInfo a {
+    text-decoration: underline;
+    /* display: block; */
+    color: #3427c5;
+}
