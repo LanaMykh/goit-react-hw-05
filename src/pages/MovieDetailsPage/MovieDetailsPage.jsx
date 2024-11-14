@@ -13,19 +13,17 @@ const MovieDetailsPage = () => {
   useEffect(() => {
     if (!movieId) return;
 
-    async function fetchMovieById(movieId) {
+    const fetchMovieById = async movieId => {
       try {
         setIsLoading(true);
         const movieData = await getMovieById(movieId);
         setMovieById(movieData);
-        console.log(movieData);
-        // const genresList = movieById.map(genre => genre.name).join(', ');
       } catch (error) {
         setError(error.message);
       } finally {
         setIsLoading(false);
       }
-    }
+    };
 
     fetchMovieById(movieId);
   }, [movieId]);

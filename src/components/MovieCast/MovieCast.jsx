@@ -13,9 +13,8 @@ const MovieCast = () => {
   useEffect(() => {
     if (!movieId) return;
 
-    async function fetchMovieCastById(movieId) {
+    const fetchMovieCastById = async movieId => {
       try {
-        setError('');
         setIsLoading(true);
         const { cast } = await getMovieCast(movieId);
         setMovieCasts(cast);
@@ -24,7 +23,7 @@ const MovieCast = () => {
       } finally {
         setIsLoading(false);
       }
-    }
+    };
 
     fetchMovieCastById(movieId);
   }, [movieId]);
@@ -34,10 +33,10 @@ const MovieCast = () => {
       {error && <p>{error}</p>}
       {isLoading && <p>Wait a few moments. Loading...</p>}
 
-      <ul>
+      <ul className={styles.list}>
         {movieCasts.map(actor => {
           return (
-            <li key={actor.id}>
+            <li key={actor.id} className={styles.listItem}>
               {actor.profile_path ? (
                 <img
                   src={`${imgBaseURL}${actor.profile_path}`}
@@ -45,10 +44,10 @@ const MovieCast = () => {
                   width={100}
                 />
               ) : (
-                <span className={styles.noFoto}>X</span>
+                <span className={styles.noFoto}>no foto</span>
               )}
 
-              <h3>{actor.name}</h3>
+              <p>{actor.name}</p>
               <p>Character: {actor.character}</p>
             </li>
           );

@@ -23,7 +23,6 @@
     position: relative;
     z-index: 1;
     padding: 10px 10px;
-
 }
 
 .moreInfo {
@@ -45,17 +44,7 @@
     transform: translateX(-50vw + 50%);
 }
 
-.listMoreInfo {
-    /* display: flex;
-    flex-direction: column;
-    gap: 10px;
-    position: relative;
-    z-index: 1; */
-    /* padding-left: 20px; */
-}
-
 .listMoreInfo a {
     text-decoration: underline;
-    /* display: block; */
     color: #3427c5;
 }

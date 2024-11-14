@@ -12,7 +12,7 @@ const MovieReviews = () => {
   useEffect(() => {
     if (!movieId) return;
 
-    async function fetchMovieReviewsById(movieId) {
+    const fetchMovieReviewsById = async movieId => {
       try {
         setError('');
         setIsLoading(true);
@@ -23,7 +23,7 @@ const MovieReviews = () => {
       } finally {
         setIsLoading(false);
       }
-    }
+    };
 
     fetchMovieReviewsById(movieId);
   }, [movieId]);
@@ -34,14 +34,16 @@ const MovieReviews = () => {
       {isLoading && <p>Wait a few moments. Loading...</p>}
 
       <ul>
-        {movieReviews.map(review => {
-          return (
+        {movieReviews.length > 0 ? (
+          movieReviews.map(review => (
             <li key={review.id}>
               <h3>Author: {review.author}</h3>
               <p>{review.content}</p>
             </li>
-          );
-        })}
+          ))
+        ) : (
+          <p>We don`t have any reviews for this movie</p>
+        )}
       </ul>
     </div>
   );
