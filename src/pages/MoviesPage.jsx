@@ -1,5 +1,11 @@
+import SearchMovieForm from '../components/SearchMovieForm/SearchMovieForm';
+
 const MoviesPage = () => {
-  return <div>MoviesPage</div>;
+  return (
+    <div>
+      <SearchMovieForm />
+    </div>
+  );
 };
 
 export default MoviesPage;

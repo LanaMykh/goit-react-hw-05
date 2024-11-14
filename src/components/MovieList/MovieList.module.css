@@ -1,0 +1,15 @@
+.list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 5px 0;
+}
+
+.list a {
+    text-decoration: underline;
+    color: #3427c5;
+}
+
+.list a:hover {
+    color: #551a8b;
+    /* Змінює колір посилання при наведенні */
+}
